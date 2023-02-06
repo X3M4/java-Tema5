@@ -1,20 +1,31 @@
 package ejercicio7;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Profesor extends Persona {
 	String especialidad;
 	double salario;
 	
-	//EJERCICIO 6
+	//EJERCICIO 7
 	public Profesor(String nombre, String apellidos, LocalDate fechaNacim, 
 			String especialidad, double salario) {
+		
 		super(nombre, apellidos, fechaNacim);
+		super.setFechaNacim(fechaNacim);
 		this.especialidad = especialidad;
 		this.salario = salario;
 	}
 	
+ @Override
 	public void setFechaNacim(LocalDate fechaNacim) {
+		this.setFechaNacim(fechaNacim);
+	}
+
+	public void setFechaNacim() {
+		System.out.println("escribe la fecha de nacimiento");
+		Scanner sc = new Scanner(System.in);
+		this.setFechaNacim(LocalDate.parse(sc.nextLine()));
 		this.setFechaNacim(fechaNacim);
 	}
 	
